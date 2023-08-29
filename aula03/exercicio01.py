@@ -3,12 +3,11 @@
 
 import random
 matriz = [[],[],[],[],[]]
-volue = []
 
 for i in range(5):
     for j in range(5):
-        if i not in matriz:
-            volue = random.randint(0,99)
-            matriz[i].append(random.randint(0,99))
+        if i not in matriz[i] : 
+            if j not in matriz[i]:
+                    matriz[i].append(random.randint(0,99))
 
 print(matriz)
