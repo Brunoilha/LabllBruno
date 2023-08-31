@@ -52,3 +52,26 @@ thursday = "Probabilidade e Estatística"
 friday = "Fundamentos de Economia e Administração"
     
 main()
+
+#3.Crie um dicionário vazio filmes
+
+def movies_top():
+    my_movies = {"spider man": "2014 and green elf","interstellar": "2014 and paradox","star wars": "1999 and darth vader","ben ten": "2005 and vilgax",
+    "batman the dark knight": "2008 and joker"}
+
+    opc = ""
+    while opc != "-1":
+        print("Escolha um filme:")
+        for movie in my_movies:
+            print(movie)
+        opc = input("Digite o nome do filme ou -1 para sair: ")
+        
+        if opc in my_movies:
+            print("Ano e vilão:", {my_movies[opc]})
+        else:
+            print("Tente novamente!")
+
+def main():
+    movies_top()
+
+main()
