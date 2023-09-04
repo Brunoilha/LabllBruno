@@ -75,3 +75,21 @@ def main():
     movies_top()
 
 main()
+
+#4.Escreva um programa em Python que verifique se uma chave existe ou não em um dicionário. Se a chave existir no dicionário, imprima Verdadeiro. Caso contrário, imprima Falso.
+
+def keys_t_or_f():
+    dic = {"carro", "trem","moto", "ceu", "chuva"}
+    result = []
+    for i in range(5):
+        x = input("digite uma chave: ")
+        if x in dic:
+            result.append(True)
+        else:
+            result.append(False)
+    return result
+def main():
+    result = keys_t_or_f()
+    print(result)
+    
+main()
