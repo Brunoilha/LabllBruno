@@ -93,3 +93,68 @@ def main():
     print(result)
     
 main()
+#5.Escreva uma função que conta a quantidade de vogais em um texto e armazena tal quantidade em um dicionário, onde a chave é a vogal considerada.
+    
+def vowel(dict,count_a,count_e,count_i,count_o,count_u):
+    word = input("digite algo: ")
+    for i in word:
+        for x in i:
+            
+            if x == "a":
+                count_a = count_a + 1
+                dict["a"] = count_a
+                
+            elif x == "e":
+                count_e = count_e + 1
+                dict["e"] = count_e
+            
+            elif x == "i":
+                count_i = count_i + 1 
+                dict["i"] = count_i
+            
+            elif x == "o":
+                count_o = count_o + 1
+                dict["o"] = count_o
+            
+            elif x == "u":
+                count_u = count_u + 1
+                dict["u"] = count_u
+    return dict
+    
+def main():
+    dict = {}
+    count_a = 0
+    count_e = 0 
+    count_i = 0
+    count_o = 0
+    count_u = 0 
+    dict = vowel(dict,count_a,count_e,count_i,count_o,count_u)
+    print("vogais total: ", (dict))
+    
+main()
+
+#6.Escreva um programa que lê duas notas de vários alunos e armazena tais notas em um dicionário é o nome do aluno. A entrada de dados deve terminar quando for lida uma string vazia como nome. Escreva uma
+#função que retorna a média do aluno, dado seu nome.
+
+
+def note_students(note):
+    total = sum(note)
+    average = total / len(note)
+    return average
+    
+def main():
+    students_note = {}
+    name = input("digite um nome: ")
+    note1 = float(input("digite a nota do aluno: "))
+    note2 = float(input("digite a nota do aluno: "))
+    
+    students_note[name] = [note1,note2]
+    
+    if name in students_note:
+        average = note_students(students_note[name])
+        print("o(a)" , name,  "tirou a media:", average)
+    else:
+        print("aluno inexistente!!")
+        
+main()
+        
