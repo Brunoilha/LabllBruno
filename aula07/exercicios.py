@@ -34,22 +34,24 @@ main()
 #Crie um programa que receba através de um input o valor numérico de um mês e retorne seu valor escrito. Lembre de tratar as exceções do seu programa. Exemplo: 1 -> Janeiro, 12 -> Dezembro
 class InvalidMonthError(BaseException):
     pass 
+class InvalidMonthError(BaseException):
+    pass 
 def get_month(month):
     try:
         months = ("janeiro","fevereiro","março","abril","maio","junho","julho","agosto","setembro","outubro","novembro","dezembro")
-        return month[month -1]
+        return months[month -1]
     except IndexError:
         print('[error] tente novamente com numeros inteiros')
     except BaseException as error:
         print(f'[erro] ocorreu um erro: {error} ')
 
-
 def main():
-    month = int(input("digite um numero para saber o mes conrrespondete: "))
-    if month > 12 or month < 1:
-        raise InvalidMonthError
-    month_name = get_month(month)
-    print('o mes é',month_name )
+    try:
+        month = int(input("digite um numero para saber o mes conrrespondete: "))
+        if month > 12 or month < 1:
+            raise InvalidMonthError
+        month_name = get_month(month)
+        print(f'o mes é:{month_name} ')
     except ValueError:
         print('[erro] tente novamente com numeros inteiros')
     except InvalidMonthError:
@@ -58,5 +60,7 @@ def main():
         print(f'[erro] ocorreu um erro: {error} ')
         
 main()
+    
+    
     
     
