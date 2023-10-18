@@ -60,6 +60,26 @@ def main():
         print(f'[erro] ocorreu um erro: {error} ')
         
 main()
+
+#bissexto
+def leep(year):
+    if (year %4 == 0 and year %100 != 0) or year %400 == 0:
+        return True
+        
+    return False   
+
+def main():
+    try:
+        year = int(input("digite um ano: "))
+        result = leep(year)
+        print("é bissexto? :" ,result)
+    except ValueError:
+        print('[error] o valor digitado é invalido!')
+    except BaseException as error:
+        print(f'[error] aconteceu um erro', {error})
+    
+main()
+    
     
     
     
