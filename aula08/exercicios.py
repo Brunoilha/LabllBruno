@@ -42,13 +42,58 @@ class Negative(BaseException):
     pass
 
 def calculate_square_root(number):
+    if number < 0:
+        raise Negative(f"[error] não é permitido numeros negativos!")
     source = number ** (1/2)
     print(source)
 
 def main():
-    number = int(input("digite um numero: "))
-    result = calculate_square_root(number)
-    print("o valor da raiz quadrada de", number, "é", result)
+    try:
+        number = int(input("digite um numero: "))
+        result = calculate_square_root(number)
+        print("o valor da raiz quadrada de", number, "é", result)
+    except Negative as error:
+        print(error)
     
+main() 
+
+ #1 - Crie um método para verificar se um triângulo é equilátero (todos os lados iguais),
+#isósceles (dois lados iguais) ou escaleno (todos lados diferentes). Se os lados não
+#formarem um triângulo válido (se a soma de dois lados for menor que o terceiro lado),
+#lance uma exceção ValueError utilizando a cláusula raise com uma mensagem
+#indicando que o triângulo informado é inválido.
+
+class sum_triangle(BaseException):
+    pass
+
+def get_triangle(triangle1,triangle2,triangle3):
+    triangles_type1 = "equilatero"
+    triangles_type2 = "isoceles"
+    triangles_type3 = "escaleno"
+    
+    if triangle1 == triangle2 == triangle3:
+        print("seu triangulo é ", triangles_type1)
+        
+    elif triangle1 != triangle2 != triangle3:
+        print("seu triangulo é:", triangles_type3)
+        
+    elif triangle1 == triangle2 != triangle3 or triangle1 == triangle3 != triangle2 or triangle1 != triangle2 == triangle3:
+        print("seu triangulo é:", triangles_type2)
+    else:
+        print("tente novamente")
+        
+def main():
+    try:
+        triangle1 = int(input("digite qual o valor do lado do triangulo: "))
+        triangle2 = int(input("digite qual o valor do lado do triangulo: "))
+        triangle3 = int(input("digite qual o valor do lado do triangulo: "))
+        if triangle1 + triangle2 < triangle3 or triangle1 + triangle3 < triangle2 or triangle2 + triangle3 < triangle1:
+            raise sum_triangle(f"[error] triangulo informado é invaldo!")
+        result = get_triangle(triangle1,triangle2,triangle3)
+        print(result)
+    except ValueError:
+        print("[error] tente novamente")
+    except sum_triangle as error:
+        print(error)
     
 main()
