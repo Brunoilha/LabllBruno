@@ -54,10 +54,27 @@ def copy_file():
     except FileNotFoundError:
         print(f"O arquivo" , name_file,".txt não foi encontrado.")
         archive.close()
-
+        
 def main():
     copy_file()
+    
+main()
 
+#5. Crie um programa que lê um arquivo de texto e escreve suas linhas de trás para
+#frente. Ou seja, a última linha do arquivo original será a primeira linha no novo
+#arquivo, e assim por diante.
+    
+def file_reverse():
+    my_file = open('loucos.txt', "r")
+    lines = my_file.readlines()
+    reverse = lines[::-1]
+    my_file.close()
+    print(reverse)
+
+def main():
+    result = file_reverse()
+    print(result)
+    
 main()
 
 
