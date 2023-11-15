@@ -21,18 +21,44 @@ main()
 #arquivo. Se estiver, o programa deve imprimir a linha em que a palavra foi
 #encontrada.
 def words():
-    file_word = input("digite uma palavra: ")
+    file_word = input("Digite uma palavra: ")
     archive = open('file_words.txt', "r")
-    search = archive.readline()
-    line = 0 
-    for search in file_word:
-        if file_word == archive:
-            True    
-        else:
-            False
-    search = archive.readline()
+
+    line_number = 0
+    for line in archive:
+        line_number += 1
+        if file_word in line:
+            print(f"A palavra" ,file_word, "está no arquivo")
+            print("esta na linha:", line_number)
+            return True
+            
+    print(f"A palavra" ,file_word," não está no arquivo!")
+    return False
 
 def main():
-    words()
-    
+    result = words()
+    print(result)
 main()
+
+#3. Crie um programa que pede ao usuário para digitar o nome de um arquivo. Em
+#seguida, o programa deve criar uma cópia desse arquivo com o nome
+#"copia_nomeoriginal" (por exemplo, se o arquivo original for "exemplo.txt" , a cópia
+#deve ser "copia_exemplo.txt").
+
+def copy_file():
+    name_file = input("Digite o nome do arquivo: ")
+    
+    try:
+        archive = open(name_file + ".txt", "r")
+        print("Cópia_" + name_file + ".txt")
+    except FileNotFoundError:
+        print(f"O arquivo" , name_file,".txt não foi encontrado.")
+        archive.close()
+
+def main():
+    copy_file()
+
+main()
+
+
+
