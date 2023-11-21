@@ -15,7 +15,7 @@ def termo_game(attempt, guess):
     splited_used_words = reading_used_words.split()
 
     repeated_words = []
-    print(drawn)
+    
 
 
     if drawn not in splited_used_words:
