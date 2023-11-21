@@ -1,5 +1,4 @@
 sagaz
-negro
 termo
 mexer
 nobre
@@ -11,9 +10,6 @@ fazer
 assim
 vigor
 sutil
-aquém
-porém
-seção
 fosse
 sanar
 poder
@@ -38,3 +34,7 @@ haver
 expor
 dengo
 tempo
+ruivo
+misto
+ponto
+temor
